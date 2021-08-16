@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(lien_parallel LANGUAGES CXX)
 
-set(CMAKE_CXX_EXTENSIONS OFF)
+option(LIEN_BUILD_TESTS "Build tests" ON)
 
 find_package(Threads REQUIRED)
 
@@ -21,3 +21,7 @@ set_target_properties(lien_parallel PROPERTIES
 
 target_include_directories(lien_parallel PUBLIC include)
 target_link_libraries(lien_parallel Threads::Threads)
+
+if(LIEN_BUILD_TESTS)
+    add_subdirectory(test)
+endif()
