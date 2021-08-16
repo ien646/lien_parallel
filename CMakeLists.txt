@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(lien_parallel LANGUAGES CXX)
 
-option(LIEN_BUILD_TESTS "Build tests" ON)
+option(LIEN_BUILD_TESTS "Build tests" OFF)
 
 find_package(Threads REQUIRED)
 
